@@ -19,3 +19,4 @@ exclude:
   - Gemfile.lock
   - bin/
   - README.md
+  - vendor/
