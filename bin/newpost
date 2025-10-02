@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Script to create a new blog post with YAML front matter
+# Usage: bin/newpost "Your Post Title"
+
+set -e
+
+if [ -z "$1" ]; then
+  echo "Usage: bin/newpost \"Post Title\""
+  echo "Example: bin/newpost \"My First Post\""
+  exit 1
+fi
+
+# Get the post title from the first argument
+TITLE="$1"
+
+# Generate the filename-friendly version of the title (lowercase, spaces to hyphens)
+SLUG=$(echo "$TITLE" | tr '[:upper:]' '[:lower:]' | tr ' ' '-' | sed 's/[^a-z0-9-]//g')
+
+# Get current date
+DATE=$(date +%Y-%m-%d)
+TIME=$(date +%H:%M:%S)
+TIMEZONE=$(date +%z)
+
+# Create the filename
+FILENAME="_posts/${DATE}-${SLUG}.md"
+
+# Check if file already exists
+if [ -f "$FILENAME" ]; then
+  echo "Error: File $FILENAME already exists!"
+  exit 1
+fi
+
+# Create the post file with YAML front matter
+cat > "$FILENAME" << EOF
+---
+layout: post
+title: "$TITLE"
+date: $DATE $TIME $TIMEZONE
+tags: []
+---
+
+Write your post content here...
+EOF
+
+echo "Created new post: $FILENAME"
+echo "Edit the file to add your content and tags."
