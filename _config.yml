@@ -1,0 +1,21 @@
+# Site settings
+title: Tech Topics
+description: A tech blog about various technical topics
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Permalink format
+permalink: /:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - bin/
+  - README.md
