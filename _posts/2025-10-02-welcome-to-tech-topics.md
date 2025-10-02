@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to Tech Topics"
-date: 2025-10-02 12:00:00 -0000
+date: 2025-10-02 08:00:00 -0000
 tags: [welcome, introduction]
 ---
 

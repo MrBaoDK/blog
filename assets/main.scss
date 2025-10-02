@@ -1,0 +1,85 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+// Custom color palette
+$brand-color:      #3c9acb !default; // Primary Blue
+$accent-color:     #ef7b3c !default; // Accent Orange
+$dark-navy:        #1c1f3f !default; // Dark Navy
+$white:            #ffffff !default; // White
+$light-gray:       #d9d9d9 !default; // Light Gray
+
+// Override Minima theme colors
+$text-color:       $dark-navy;
+$background-color: $white;
+$grey-color:       #828282;
+$grey-color-light: $light-gray;
+
+@import "minima";
+
+// Additional custom styles to apply the color palette
+.site-header {
+  border-top: 5px solid $accent-color;
+  background-color: $white;
+}
+
+.site-title {
+  color: $brand-color !important;
+  
+  &:hover {
+    color: darken($brand-color, 10%) !important;
+  }
+}
+
+.site-nav .page-link {
+  color: $dark-navy;
+  
+  &:hover {
+    color: $brand-color;
+  }
+}
+
+.post-link {
+  color: $brand-color;
+  
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+a {
+  color: $brand-color;
+  
+  &:hover {
+    color: $accent-color;
+  }
+}
+
+.page-heading {
+  color: $dark-navy;
+}
+
+.post-meta {
+  color: #828282;
+}
+
+.site-footer {
+  background-color: $dark-navy;
+  color: $light-gray;
+  
+  .footer-heading {
+    color: $white;
+  }
+  
+  a {
+    color: $brand-color;
+    
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $dark-navy;
+}
